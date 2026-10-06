@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+int NumberReverse(int num);  //Here we are declaring the function before we use it in the main function.
+int main() {
+
+    int num;  // creating a variable to store a number thats inputted by the user 
+    cout << "Enter a number:";
+    cin >> num;  //taking input from user and storing it in num
+    cout << "The reverse of this number is:" << NumberReverse(num);
+}
+    int NumberReverse(int num) {
+        int reverse = 0; //So the reverse here starts at 0 and we will add the digits to it as we go through the while loop
+        while (num != 0) { //This while loop runs until the number is 0, and when it is 0, we succesfully reversed the number 
+            int digit = num % 10; // here we are getting the last digit of the number by % 10 and storing it in digit
+            reverse = reverse * 10 + digit; //Here we are multiplying the reverse by 10 and adding the digit to it, so that we can add the next digit to the end of the number
+            num /= 10;//then we divide the number by 10 to remove the last digit,
+        }
+        return reverse;
+    }
+
+    //Loop ends when number is 0!!!
+    //123 -> 3 
